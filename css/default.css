@@ -1,7 +1,8 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: url(../images/bg.jpg) 0 0 no-repeat;
+	/* background: url(../images/pink.jpg) 0 0 no-repeat; */
+	background: radial-gradient(ellipse at bottom left, #fdb7b9 20%, #de5d6f 50%, #b1414d);
 	font-size: 12px;
 	overflow: auto;
 }
@@ -72,7 +73,6 @@ body {
 #code {
 	float: left;
 	width: 490px;
-	height: 500px;
 	color: #333;
 	font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
 	font-size: 12px;
@@ -99,14 +99,18 @@ body {
 	color: #3f7f5f;
 }
 
-#code .comments-gray{
-	color: #a29b9b;
+#code .comments-gray, #code .name {
+	color: #d8bebe;
 }
 
 #code .time-number{
   color: #7f0055;
 	font-weight:bold;
-  margin-right: 5px;
+	margin-right: 6px;
+}
+
+#code .time-unit {
+	margin-left: 10px;
 }
 
 #code span {
