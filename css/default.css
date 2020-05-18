@@ -1,15 +1,15 @@
 body {
 	margin: 0;
 	padding: 0;
-	/* background: url(../images/pink.jpg) 0 0 no-repeat; */
-	background: radial-gradient(ellipse at bottom left, #fdb7b9 20%, #de5d6f 50%, #b1414d);
-	font-size: 12px;
+	/* background: radial-gradient(ellipse at bottom left, #fdb7b9 20%, #de5d6f 50%, #b1414d); */
+	background: radial-gradient(ellipse at top left, #fff 30%, #de5d6f 50%, #b1414d);
 	overflow: auto;
 }
 
 #mainDiv{
 	width: 100%;
 	height: 100%;
+	font-size: 12px;
 }
 
 #loveHeart {

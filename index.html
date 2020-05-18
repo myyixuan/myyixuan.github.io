@@ -6,15 +6,64 @@
     <link rel="icon" href="images/heart.ico" type="image/x-icon" />
     <link href="css/default.css" type="text/css" rel="stylesheet">
     <!-- <link href="css/bg.css" type="text/css" rel="stylesheet"> -->
+    <link href="css/ticket.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/garden.js"></script>
   </head>
   <body>
-    <div id="mainDiv">
-      <div id="content" style="width: 1160px; height: 625px; margin-left: 220px;">
-        <div id="code">
-          <span class="comments">// 有点甜，第一次见面 火车票车次</span><br><br>
+    <div id="ticket">
+      <div class="ticket-tip">// 那张重要的车票也许会迟到，但从不会缺席......</div>
+      <div class="ticket">
+        <div class="row">
+          <div class="ticket-number">Z105H071839</div>
+          <div class="arrow"></div>
+          <div class="check-in">检票口：候车室6</div>
+        </div>
+        <div class="row">
+          <div class="start">
+            <div>
+              <span class="station-name">上 海</span><span class="station"> 站</span>
+            </div>
+            <div>Shanghai</div>
+          </div>
+          <div class="train">
+            <div class="train-number">D956</div>
+          </div>
+          <div class="end">
+            <div>
+              <span class="station-name">宜昌东</span><span class="station"> 站</span>
+            </div>
+            <div>Yichangdong</div>
+          </div>
+        </div>
+        <div class="row row-wrapper">
+          <div class="time"><span class="num">2020</span><span class="unit">年</span><span class="num">05</span><span class="unit">月</span><span class="num">01</span><span class="unit">日</span><span class="num">09:30</span><span class="unit">开</span></div>
+          <div class="seat"><span class="num">04</span><span class="unit">车</span><span class="num">14A</span><span class="unit">号</span></div>
+        </div>
+        <div class="row row-wrapper">
+          <div class="money"><span class="num">￥ 423.0</span><span class="unit">元</span></div>
+          <div class="channel">网</div>
+          <div class="seat-level">二等座</div>
+        </div>
+        <div class="tip">限乘当日当次车</div>
+        <div class="row">
+          <div class="info">
+            <div class="id">4211251990****401X 南潮</div>
+            <div class="tip-box">
+              <div>欢度五一 祝福祖国</div>
+              <div>中国铁路祝您旅途愉快</div>
+            </div>
+          </div>
+          <div class="qr-code-wrapper"><img src="images/qrcode.png" alt="" class="qr-code"></div>
+        </div>
+        <div class="footer"><span>32270320221225P095659</span><span class="txt">沪</span><span class="txt">售</span></div>
+      </div>
+    </div>
+    
 
+    <div id="mainDiv">
+      <div id="content">
+        <div id="code">
           <span class="comments">// 第一次和你聊天</span><br><br>
           <span class="comments-gray">/***************************************************</span><br>
           <span class="comments-gray">Time: 2020/04/06 20:41</span><br>
@@ -37,13 +86,12 @@
           <span><span class="keyword">printf</span><span class="string">"每天都很开心"</span></span><br>
           <br><br><br>
 
+          <span class="comments">// We've known each other for ...</span><br><br>
+          <span id="clock"></span>
 
         </div>
       </div>
     </div>
-
-    <!-- <span class="comments">// We've known each other for ...</span><br><br>
-    <span id="clock"></span> -->
 
     <div id="loveHeart">
       <canvas id="garden" width="670" height="625"></canvas>
@@ -52,7 +100,6 @@
     <audio loop autoplay="autoplay">
       <source src="images/sweet.mp3" type="audio/mp3" />
     </audio>
-    <!-- <video controls="controls" autoplay="autoplay" name="media"><source src="http://isure.stream.qqmusic.qq.com/C400000ol3z73NL0bL.m4a?guid=2752916844&amp;vkey=6F1FE0FA19CBA109BE87D7FF657DC2EB7A79B3C27EEDC12FE1099C490E859C24057396E47D30CE097B97D86B3B8F3AA1EE36B23E88EE198B&amp;uin=0&amp;fromtag=66" type="audio/mp4"></video> -->
 
     <script type="text/javascript">
       var offsetX = $("#loveHeart").width() / 2;
@@ -64,12 +111,24 @@
       nolovetime.setSeconds(0);
       nolovetime.setMilliseconds(0);
 
+      //var position = 0
       setTimeout(function () {
         startHeartAnimation();
       }, 10e3);
-      //setInterval(Time, 500);
+      //$("#ticket").typewriter();
+      setInterval(Time, 500);
       adjustCodePosition();
-        $("#code").typewriter();
+
+      $("#code").typewriter();
+      // setInterval(function() {
+      //   position += 5
+      //   window.scrollTo(0, position)
+      // }, 500)
+
+      setTimeout(function () {
+        //window.scrollTo(0, 500)
+      }, 6e3);
+      
     </script>
   </body>
 </html>

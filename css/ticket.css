@@ -1,0 +1,132 @@
+#ticket {
+  margin-left: 100px;
+}
+
+.ticket-tip {
+  margin-top: 50px;
+  color: #3f7f5f;
+  font-size: 12px;
+}
+
+
+.ticket {
+  width: 380px;
+  height: 234px;
+  background: url(../images/ticket.png) 0 0 no-repeat; 
+  margin-top: 25px;
+}
+
+.ticket .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ticket .row .ticket-number {
+  color: #cc1313;
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.ticket .row .arrow {
+  border: 5px solid transparent;
+  border-left: 10px solid #000;
+  width: 0;
+  height: 0px;
+  margin-top: 14px;
+  margin-left: -65px;
+}
+
+.ticket .row .check-in {
+  margin-top: 8px;
+  margin-right: 20px;
+}
+
+.ticket .row .start {
+  margin-left: 40px;
+}
+
+.ticket .row .end {
+  margin-right: 30px;
+}
+
+.ticket .row-wrapper {
+  margin-top: -6px;
+}
+
+.ticket .row .time {
+  margin-left: 20px;
+}
+
+.ticket .row .seat {
+  margin-right: 60px;
+}
+
+.ticket .row .num {
+  vertical-align: middle;
+} 
+
+.ticket .row .money {
+  margin-left: 20px;
+}
+
+.ticket .row .channel {
+  margin-left: -45px;
+}
+
+.ticket .row .seat-level {
+  margin-right: 60px;
+}
+
+.ticket .row .unit {
+  font-size: 12px;
+  margin-right: 6px;
+  margin-left: 2px;
+  vertical-align: middle;
+}
+
+.ticket .row .station-name {
+  font-size: 24px;
+}
+
+.ticket .row .train {
+  margin-top: 14px;
+}
+
+
+.ticket .time-warpper {
+  margin-top: 30px;
+}
+
+.ticket .tip {
+  margin-left: 20px;
+}
+
+.ticket .row .id {
+  margin-left: 20px;
+}
+
+
+.ticket .row .qr-code {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+
+.ticket .row .tip-box {
+  width: 230px;
+  height: 35px;
+  border: 1px dashed  #000;
+  font-size: 12px;
+  text-align: center;
+  margin-left: 40px;
+}
+
+.ticket .footer {
+  margin-left: 20px;
+  color: rgb(0,0,0,0.7);
+}
+
+.ticket .footer .txt {
+  margin-left: 20px;
+}
+
