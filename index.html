@@ -1,17 +1,22 @@
-<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>I love yixuan</title>
     <link rel="icon" href="images/heart.ico" type="image/x-icon" />
-    <link href="css/default.css" type="text/css" rel="stylesheet">
+    <link href="./css/default.css" type="text/css" rel="stylesheet">
     <!-- <link href="css/bg.css" type="text/css" rel="stylesheet"> -->
-    <link href="css/ticket.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/garden.js"></script>
+    <link href="./css/ticket.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/garden.js"></script>
+    <script type="text/javascript" src="./js/makesnake.js"></script>
+    <script type="text/javascript" src="./js/roundabout.js"></script>
+		<script type="text/javascript" src="./js/roundabout_shapes.js"></script>
+		<script type="text/javascript" src="./js/gallery_init.js"></script>
+    <script type="text/javascript" src="./js/move.js"></script>
   </head>
   <body>
-    <div id="ticket">
+
+    <!-- <div id="ticket">
       <div class="ticket-tip">// 那张重要的车票也许会迟到，但从不会缺席......</div>
       <div class="ticket">
         <div class="row">
@@ -58,19 +63,50 @@
         </div>
         <div class="footer"><span>32270320221225P095659</span><span class="txt">沪</span><span class="txt">售</span></div>
       </div>
-    </div>
+    </div> -->
     
 
-    <div id="mainDiv">
+    <!-- <div id="mainDiv">
       <div id="content">
         <div id="code">
-          <span class="comments">// 第一次和你聊天</span><br><br>
+          <span class="comments">// 第一次和你聊天/span><br><br>
           <span class="comments-gray">/***************************************************</span><br>
-          <span class="comments-gray">Time: 2020/04/06 20:41</span><br>
-          <span class="comments-gray">@ zhihu</span><br>
+          <span class="comments-gray">@Time: 2020/04/06 20:41</span><br>
+          <span class="comments-gray">@place: zhihu.com</span><br>
           <span class="comments-gray">****************************************************/</span><br>
           <span class="string"><span class='name'>nanc: </span>22好年轻，30岁程序员了解一下吗</span><br>
           <span class="string"><span class='name'>一茶：</span>嗯你好呀🤣 不比我小就好</span><br><br><br><br>
+
+          <span class="comments">// 第一次和你牵手/span><br><br>
+          <span class="comments-gray">/***************************************************</span><br>
+          <span class="comments-gray">@Time: 2020/05/03 night</span><br>
+          <span class="comments-gray">@place: cafe</span><br>
+          <span class="comments-gray">****************************************************/</span><br>
+          <span class="string">剧中男女主角的牵手给了我勇气（脸红つ﹏⊂）</span><br>
+
+          <span class="comments">// 第一次抱你，吻你/span><br><br>
+          <span class="comments-gray">/***************************************************</span><br>
+          <span class="comments-gray">@Time: 2020/05/04 night</span><br>
+          <span class="comments-gray">@place: 沿江大道</span><br>
+          <span class="comments-gray">****************************************************/</span><br>
+          <span class="string">牵着你的手往回走着，突然想一把抱住你，并忍不住吻了你（吻完才想起刚吃完小龙虾，一嘴的油，尴尬~）</span><br>
+
+          <span class="comments">// 第一次被你吻/span><br><br>
+          <span class="comments-gray">/***************************************************</span><br>
+          <span class="comments-gray">@Time: 2020/05/05 morning</span><br>
+          <span class="comments-gray">@place: 宜昌东站</span><br>
+          <span class="comments-gray">****************************************************/</span><br>
+          <span class="string">在我进站前，你看我东张西望，不知所措。可我真的没想到，你的嘴唇贴了上来，我激动地把你拥在怀里，回味很久……</span><br>
+
+          <span class="comments">// 第一次.../span><br><br>
+          <span class="comments-gray">/***************************************************</span><br>
+          <span class="comments-gray">@Time: anytime</span><br>
+          <span class="comments-gray">@place: everywhere</span><br>
+          <span class="comments-gray">@todo: everything</span><br>
+          <span class="comments-gray">****************************************************/</span><br>
+          <span class="string">有你，一切的美好更加有意义，想和你做所有的事情，去所有的地方，陪你到永远。</span><br>
+          <span class="string">和你看尽一生繁华，看淡一世浮华，看清人间冷暖。</span><br>
+
 
 
           <span class="comments">// 我说</span><br><br>
@@ -91,7 +127,17 @@
 
         </div>
       </div>
-    </div>
+    </div> -->
+
+    <div id="container">
+			<ul id="myRoundabout" class="roundabout-holder" style="padding: 0px; position: relative; z-index: 100;">
+		  	<li class="roundabout-moveable-item roundabout-in-focus" current-scale="1.0000" style="position: absolute; left: 122px; top: 87px; width: 350px; height: 222px; opacity: 1; z-index: 400; font-size: 16px;"><img src="./images/pictures/1.jpg" alt=""></li>
+			<li class="roundabout-moveable-item" current-scale="0.7927" style="position: absolute; left: -0.4px; top: 110px; width: 277.445px; height: 175.9794px; opacity: 1; z-index: 296; font-size: 12.68px;"><img src="./images/pictures/2.jpg" alt=""></li>
+			<li class="roundabout-moveable-item" current-scale="0.4573" style="position: absolute; left: 473.8px; top: 147.2px; width: 160.055px; height: 101.5206px; opacity: 1; z-index: 129; font-size: 7.32px;"><img src="./images/pictures/3.jpg" alt=""></li>
+			<li class="roundabout-moveable-item" current-scale="0.4573" style="position: absolute; left: -39.8px; top: 147.2px; width: 160.055px; height: 101.5206px; opacity: 1; z-index: 129; font-size: 7.32px;"><img src="./images/pictures/4.jpg" alt=""></li>
+			<li class="roundabout-moveable-item" current-scale="0.7927" style="position: absolute; left: 317px; top: 110px; width: 277.445px; height: 175.9794px; opacity: 1; z-index: 296; font-size: 12.68px;"><img src="./images/pictures/5.jpg" alt=""></li>
+		  </ul>
+		</div>
 
     <div id="loveHeart">
       <canvas id="garden" width="670" height="625"></canvas>
@@ -100,6 +146,12 @@
     <audio loop autoplay="autoplay">
       <source src="images/sweet.mp3" type="audio/mp3" />
     </audio>
+
+    <script type="text/javascript">
+      setTimeout(makesnake, 1314);
+      setTimeout(move, 520);
+    </script>
+  
 
     <script type="text/javascript">
       var offsetX = $("#loveHeart").width() / 2;
@@ -111,19 +163,16 @@
       nolovetime.setSeconds(0);
       nolovetime.setMilliseconds(0);
 
-      //var position = 0
+
       setTimeout(function () {
         startHeartAnimation();
       }, 10e3);
-      //$("#ticket").typewriter();
+
       setInterval(Time, 500);
       adjustCodePosition();
 
-      $("#code").typewriter();
-      // setInterval(function() {
-      //   position += 5
-      //   window.scrollTo(0, position)
-      // }, 500)
+      //$("#code").typewriter();
+
 
       setTimeout(function () {
         //window.scrollTo(0, 500)

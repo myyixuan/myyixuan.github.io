@@ -136,3 +136,58 @@ body {
 #copyright a{
 	color:#666;
 }
+
+
+#container .roundabout-holder  { 
+	width:600px;
+	height:400px;
+	margin:0 auto;
+}
+#container .roundabout-moveable-item {
+	width: 350px;
+	height: 222px;
+	cursor: pointer;
+	border:3px solid #ccc;
+	border:3px solid rgba(0, 0, 0, 0.08);
+    border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+}
+#container .roundabout-moveable-item img{
+	width:100%;
+}
+#container .roundabout-in-focus {
+	border:3px solid rgba(0, 0, 0, 0.2);
+}
+
+#container  ol, ul {
+	list-style: none;
+}
+
+#container  img {
+	vertical-align:top; 
+}
+
+
+.spanstyle {
+	color:#ff99f7;
+	font-family:courier;
+	text-shadow: 2px 2px 1px #6f3d3d; 
+	font-style:italic;
+	font-weight:600;
+	font-size:20px;
+	position:absolute;		/* 绝对定位 */
+	top:-50px;
+	overflow:hidden;
+}
+
+
+#loveTree {
+	margin: 0 auto;
+	width: 1100px;
+	height: 680px;
+}
+
+
+
+
