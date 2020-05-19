@@ -95,21 +95,26 @@ body {
 	margin-left:7px;
 }
 
-#code .comments{
+#code .comments, #clock-wrapper .comments {
 	color: #3f7f5f;
 }
 
-#code .comments-gray, #code .name {
-	color: #d8bebe;
+#clock-wrapper .comments {
+	margin-bottom: 10px;
+	font-size: 16px;
 }
 
-#code .time-number{
+#code .comments-gray, #code .name {
+	color: #713434;
+}
+
+#code .time-number, #clock-wrapper .time-number{
   color: #7f0055;
 	font-weight:bold;
 	margin-right: 6px;
 }
 
-#code .time-unit {
+#code .time-unit, #clock-wrapper .time-unit {
 	margin-left: 10px;
 }
 
@@ -137,6 +142,9 @@ body {
 	color:#666;
 }
 
+#container {
+	visibility: hidden;
+}
 
 #container .roundabout-holder  { 
 	width:600px;
@@ -181,6 +189,13 @@ body {
 	overflow:hidden;
 }
 
+#clock-wrapper {
+	position: absolute;
+	top: 915px;
+	left: 606px;
+	font-size: 22px;
+}
+
 
 #loveTree {
 	margin: 0 auto;
@@ -188,6 +203,10 @@ body {
 	height: 680px;
 }
 
+#main{width:100%;position: absolute; top: 315px; left:175px;}
+#wrap{position:relative;margin:0 auto;width:1100px;height:680px;margin-top:10px;}
+#text{width:400px;height:425px;left:60px;top:80px;position:absolute;}
+#canvas{margin:0 auto;width:1100px;height:680px;}
 
 
 
