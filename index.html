@@ -5,11 +5,9 @@
     <title>I love yixuan</title>
     <link rel="icon" href="images/heart.ico" type="image/x-icon" />
     <link href="./css/default.css" type="text/css" rel="stylesheet">
-    <!-- <link href="css/bg.css" type="text/css" rel="stylesheet"> -->
     <link href="./css/ticket.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/garden.js"></script>
-    <!-- <script type="text/javascript" src="./js/makesnake.js"></script> -->
     <script type="text/javascript" src="./js/snowstorm.js"></script>
     <script type="text/javascript" src="./js/roundabout.js"></script>
 		<script type="text/javascript" src="./js/roundabout_shapes.js"></script>
@@ -24,10 +22,9 @@
     <script type="text/javascript" src="./Love_files/love.js" charset="utf-8"></script>
   </head>
   <body>
-
     <div id="ticket">
-      <div class="ticket-tip">// 那张重要的车票也许会迟到，但从不会缺席......</div>
-      <div class="ticket">
+      <div class="ticket-tip" id="ticket-tip">// 那张重要的车票也许会迟到，但从不会缺席......</div>
+      <div class="ticket" id="ticket-body" style="display: none;">
         <div class="row">
           <div class="ticket-number">Z105H071839</div>
           <div class="arrow"></div>
@@ -74,10 +71,9 @@
       </div>
     </div>
     
-
     <div id="mainDiv">
       <div id="content">
-        <div id="code">
+        <div id="code" style="display: none;">
           <span class="comments">// 第一次和你聊天</span><br><br>
           <span class="comments-gray">/***************************************************</span><br>
           <span class="comments-gray">@Time: 2020/04/06 20:41</span><br>
@@ -120,11 +116,6 @@
           <span class="comments-gray">****************************************************/</span><br>
           <span class="string">有你在的每一天都是新鲜的，想和你一起去所有的地方，体验任何的事情。</span><br>
           <span class="string">和你看尽一生繁华，看淡一世浮华，看清人间冷暖。</span><br><br><br><br>
-
-
-          <!-- <span class="comments">// We've known each other for ...</span><br><br>
-          <span id="clock"></span> -->
-
         </div>
       </div>
     </div>
@@ -155,216 +146,9 @@
     </div>
 
     <script>
-       document.write('<audio loop autoplay="autoplay"><source src="images/sweet.mp3?'+Math.random()+'" type="audio/mp3" /></audio>');
+      document.write('<audio loop autoplay="autoplay"><source src="images/sweet.mp3?'+Math.random()+'" type="audio/mp3" /></audio>');
     </script>
-   
-    
-
-    <script>
-      (function(){
-          var canvas = $('#canvas');
-  
-          var width = canvas.width();
-          var height = canvas.height();
-          
-          canvas.attr("width", width);
-          canvas.attr("height", height);
-  
-          var opts = {
-              seed: {
-                  x: width / 2 - 20,
-                  color: "rgb(190, 26, 37)",
-                  scale: 2
-              },
-              branch: [
-                  [535, 680, 570, 250, 500, 200, 30, 100, [
-                      [540, 500, 455, 417, 340, 400, 13, 100, [
-                          [450, 435, 434, 430, 394, 395, 2, 40]
-                      ]],
-                      [550, 445, 600, 356, 680, 345, 12, 100, [
-                          [578, 400, 648, 409, 661, 426, 3, 80]
-                      ]],
-                      [539, 281, 537, 248, 534, 217, 3, 40],
-                      [546, 397, 413, 247, 328, 244, 9, 80, [
-                          [427, 286, 383, 253, 371, 205, 2, 40],
-                          [498, 345, 435, 315, 395, 330, 4, 60]
-                      ]],
-                      [546, 357, 608, 252, 678, 221, 6, 100, [
-                          [590, 293, 646, 277, 648, 271, 2, 80]
-                      ]]
-                  ]] 
-              ],
-              bloom: {
-                  num: 700,
-                  width: 1080,
-                  height: 650,
-              },
-              footer: {
-                  width: 600,
-                  height: 5,
-                  speed: 10,
-              }
-          }
-  
-          var tree = new Tree(canvas[0], width, height, opts);
-          var seed = tree.seed;
-          var foot = tree.footer;
-          var hold = 1;
-  
-          canvas.click(function(e) {
-              var offset = canvas.offset(), x, y;
-              x = e.pageX - offset.left;
-              y = e.pageY - offset.top;
-              
-              window.scrollTo(0,263)
-              // setTimeout(function(){
-              //   $("#clock-wrapper").fadeIn(500);
-              // }, 5000)
-              if (seed.hover(x, y)) {
-                  hold = 0; 
-                  canvas.unbind("click");
-                  canvas.unbind("mousemove");
-                  canvas.removeClass('hand');
-              }
-          }).mousemove(function(e){
-              var offset = canvas.offset(), x, y;
-              x = e.pageX - offset.left;
-              y = e.pageY - offset.top;
-              canvas.toggleClass('hand', seed.hover(x, y));
-          });
-  
-          var seedAnimate = eval(Jscex.compile("async", function () {
-              seed.draw();
-              while (hold) {
-                  $await(Jscex.Async.sleep(10));
-              }
-              while (seed.canScale()) {
-                  seed.scale(0.95);
-                  $await(Jscex.Async.sleep(10));
-              }
-              while (seed.canMove()) {
-                  seed.move(0, 2);
-                  foot.draw();
-                  $await(Jscex.Async.sleep(10));
-              }
-          }));
-  
-          var growAnimate = eval(Jscex.compile("async", function () {
-              do {
-                  tree.grow();
-                  $await(Jscex.Async.sleep(10));
-              } while (tree.canGrow());
-          }));
-  
-          var flowAnimate = eval(Jscex.compile("async", function () {
-              do {
-                  tree.flower(2);
-                  $await(Jscex.Async.sleep(10));
-              } while (tree.canFlower());
-          }));
-  
-          var moveAnimate = eval(Jscex.compile("async", function () {
-              tree.snapshot("p1", 240, 0, 610, 680);
-              while (tree.move("p1", 500, 0)) {
-                  foot.draw();
-                  $await(Jscex.Async.sleep(10));
-              }
-              foot.draw();
-              tree.snapshot("p2", 500, 0, 610, 680);
-  
-              // 会有闪烁不得意这样做, (＞﹏＜)
-               canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-              // canvas.css("background", "#ffe");
-              $await(Jscex.Async.sleep(300));
-              canvas.css("background", "none");
-          }));
-  
-          var jumpAnimate = eval(Jscex.compile("async", function () {
-              var ctx = tree.ctx;
-              while (true) {
-                  tree.ctx.clearRect(0, 0, width, height);
-                  tree.jump();
-                  foot.draw();
-                  $await(Jscex.Async.sleep(25));
-              }
-          }));
-  
-          var textAnimate = eval(Jscex.compile("async", function () {
-              var together = new Date();
-              together.setFullYear(2010, 5, 8);
-              together.setHours(20);
-              together.setMinutes(20);
-              together.setSeconds(0);
-              together.setMilliseconds(0);
-  
-              $("#clock-wrapper").fadeIn(500);
-              //$("#code").show().typewriter();
-              //$("#clock-box").fadeIn(500);
-              while (true) {
-                  timeElapse(together);
-                  $await(Jscex.Async.sleep(1000));
-              }
-          }));
-  
-          var runAsync = eval(Jscex.compile("async", function () {
-              $await(seedAnimate());
-              $await(growAnimate());
-              $await(flowAnimate());
-              $await(moveAnimate());
-  
-              textAnimate().start();
-  
-              $await(jumpAnimate());
-          }));
-  
-          runAsync().start();
-      })();
-    </script>
-  
-
-    <script type="text/javascript">
-      var offsetX = $("#loveHeart").width() / 2;
-      var offsetY = $("#loveHeart").height() / 2 - 55;
-      var nolovetime = new Date();
-      nolovetime.setFullYear(2013, 8, 22);
-      nolovetime.setHours(14);
-      nolovetime.setMinutes(0);
-      nolovetime.setSeconds(0);
-      nolovetime.setMilliseconds(0);
-
-
-      // setTimeout(function () {
-      //   startHeartAnimation();
-      // }, 10e3);
-
-      setInterval(Time, 500);
-      adjustCodePosition();
-
-      $("#code").typewriter();
- 
-
-      setTimeout(function () {
-        window.scrollTo(0, 430)
-      }, 6e3);
-
-      setTimeout(function () {
-        window.scrollTo(0,840)
-      }, 16e3);
-
-      setTimeout(function(){
-        $('#container').css('visibility', 'visible')
-        move()
-        setTimeout(function () {
-          window.scrollTo(0,0)
-          //$('#mainDiv').fadeOut(3000)
-        }, 2e3);
-        setTimeout(function() {
-          $('#main').css('visibility', 'visible')
-        }, 12e3)
-      }, 30e3);
-
-      
-      
-    </script>
+    <script src="./js/heart_tree.js"></script>
+    <script src="./js/func.js"></script>
   </body>
 </html>
