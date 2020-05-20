@@ -24,10 +24,13 @@ function Time(){
 var offsetX = $("#loveHeart").width() / 2;
 var offsetY = $("#loveHeart").height() / 2 - 55;
 
+var showTrigger = document.getElementById('show');
+
 $('#ticket-tip').fadeIn(3000, function() {
-  document.getElementById('show').onclick = function(e) {
+  showTrigger.onclick = function(e) {
     document.querySelector('#bgm').play()
-    document.getElementById('show').onclick = null
+    $('#show').fadeOut('fast')
+    showTrigger = null
 
     $('#ticket-body').slideDown(5000, function() {
       adjustCodePosition();
