@@ -8,11 +8,14 @@
   font-size: 12px;
 }
 
+.ticket-tip .show:hover {
+  cursor: pointer;
+}
 
 .ticket {
   width: 380px;
   height: 234px;
-  background: url(../images/ticket.png) 0 0 no-repeat; 
+  background: url(../images/ticket.png) 0 0 no-repeat;
   margin-top: 25px;
 }
 
@@ -63,7 +66,7 @@
 
 .ticket .row .num {
   vertical-align: middle;
-} 
+}
 
 .ticket .row .money {
   margin-left: 20px;
@@ -129,4 +132,3 @@
 .ticket .footer .txt {
   margin-left: 20px;
 }
-

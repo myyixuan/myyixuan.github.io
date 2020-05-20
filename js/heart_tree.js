@@ -3,7 +3,7 @@
 
   var width = canvas.width();
   var height = canvas.height();
-  
+
   canvas.attr("width", width);
   canvas.attr("height", height);
 
@@ -29,7 +29,7 @@
               [546, 357, 608, 252, 678, 221, 6, 100, [
                   [590, 293, 646, 277, 648, 271, 2, 80]
               ]]
-          ]] 
+          ]]
       ],
       bloom: {
           num: 700,
@@ -37,7 +37,7 @@
           height: 650,
       },
       footer: {
-          width: 600,
+          width: 520,
           height: 5,
           speed: 10,
       }
@@ -52,11 +52,11 @@
       var offset = canvas.offset(), x, y;
       x = e.pageX - offset.left;
       y = e.pageY - offset.top;
-      
+
       window.scrollTo(0,263)
 
       if (seed.hover(x, y)) {
-          hold = 0; 
+          hold = 0;
           canvas.unbind("click");
           canvas.unbind("mousemove");
           canvas.removeClass('hand');

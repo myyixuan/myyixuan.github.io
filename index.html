@@ -22,8 +22,11 @@
     <script type="text/javascript" src="./Love_files/love.js" charset="utf-8"></script>
   </head>
   <body>
+    <audio id="bgm" loop preload="auto">
+      <source src="./images/sweet.mp3" type="audio/mp3" />
+    </audio>
     <div id="ticket">
-      <div class="ticket-tip" id="ticket-tip">// 那张重要的车票也许会迟到，但从不会缺席......</div>
+      <div style="display:none" class="ticket-tip" id="ticket-tip">// 那张重要的车票也许会迟到，但从不会缺席......<span id="show" class="show">（看一看？）</span></div>
       <div class="ticket" id="ticket-body" style="display: none;">
         <div class="row">
           <div class="ticket-number">Z105H071839</div>
@@ -70,7 +73,7 @@
         <div class="footer"><span>32270320221225P095659</span><span class="txt">沪</span><span class="txt">售</span></div>
       </div>
     </div>
-    
+
     <div id="mainDiv">
       <div id="content">
         <div id="code" style="display: none;">
@@ -129,7 +132,7 @@
         <li class="roundabout-moveable-item" current-scale="0.7927" style="position: absolute; left: 317px; top: 110px; width: 277.445px; height: 175.9794px; opacity: 1; z-index: 296; font-size: 12.68px;"><img src="images/pictures/love5.jpeg" alt=""></li>
 		  </ul>
     </div>
-    
+
     <div id="main" style="visibility: hidden;">
       <div id="wrap">
         <canvas id="canvas" width="1100" height="680"></canvas>
@@ -145,9 +148,6 @@
       <canvas id="garden" width="670" height="625"></canvas>
     </div>
 
-    <script>
-      document.write('<audio loop autoplay="autoplay"><source src="images/sweet.mp3?'+Math.random()+'" type="audio/mp3" /></audio>');
-    </script>
     <script src="./js/heart_tree.js"></script>
     <script src="./js/func.js"></script>
   </body>

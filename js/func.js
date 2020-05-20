@@ -24,33 +24,35 @@ function Time(){
 var offsetX = $("#loveHeart").width() / 2;
 var offsetY = $("#loveHeart").height() / 2 - 55;
 
-$("#ticket-tip").typewriter();
+$('#ticket-tip').fadeIn(3000, function() {
+  document.getElementById('show').onclick = function(e) {
+    document.querySelector('#bgm').play()
+    document.getElementById('show').onclick = null
 
-setTimeout(function() {
-  $('#ticket-body').slideDown('slow', function() {
-    adjustCodePosition();
-    $("#code").css('display', 'block')
-    $("#code").typewriter();
+    $('#ticket-body').slideDown(5000, function() {
+      adjustCodePosition();
+      $("#code").css('display', 'block')
+      $("#code").typewriter();
 
-    setTimeout(function () {
-      window.scrollTo(0, 430)
-    }, 6e3);
-
-    setTimeout(function () {
-      window.scrollTo(0,840)
-    }, 16e3);
-
-    setTimeout(function(){
-      $('#container').css('visibility', 'visible')
-      move()
       setTimeout(function () {
-        window.scrollTo(0,0)
-      }, 2e3);
-      setTimeout(function() {
-        $('#main').css('visibility', 'visible')
-        setInterval(Time, 500);
-      }, 12e3)
-    }, 30e3);
-  })
-}, 2000)
+        window.scrollTo(0, 430)
+      }, 6e3);
 
+      setTimeout(function () {
+        window.scrollTo(0,840)
+      }, 16e3);
+
+      setTimeout(function(){
+        $('#container').css('visibility', 'visible')
+        move()
+        setTimeout(function () {
+          window.scrollTo(0,0)
+        }, 2e3);
+        setTimeout(function() {
+          $('#main').css('visibility', 'visible')
+          setInterval(Time, 500);
+        }, 12e3)
+      }, 30e3);
+    })
+  }
+})
