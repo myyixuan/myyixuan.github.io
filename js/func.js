@@ -55,7 +55,7 @@ $('#ticket-tip').fadeIn(3000, function() {
           $('#main').css('visibility', 'visible')
           setInterval(Time, 500);
         }, 12e3)
-      }, 30e3);
+      }, 22e3);
     })
   }
 })
