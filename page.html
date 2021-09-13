@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>外出申请</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- Add your keywords and description here for SEO. -->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+
+    <!-- Uncomment this if you need apple touch icon. -->
+    <!--
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
+    -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background-color: #f5efef;
+        font-size: 12px;
+      }
+
+      .header {
+        color: #333;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+      }
+
+      .header .active {
+        color: #159ca7
+      }
+
+      .tab-line {
+        height: 1px;
+        width: 50%;
+        background-color: #159ca7;
+      }
+
+      .info-box {
+        height: 100px;
+        background-color: #159ca7;
+        display: flex;
+        align-items: center;
+        color: #fff;
+      }
+
+      .info-box div {
+        line-height: 26px;
+      }
+
+      .info-box img {
+        width: 50px;
+        height: 50px;
+        border: 2px solid #fff;
+        border-radius: 25px;
+        margin: 0 20px 0 14px;
+      }
+
+      .content-box {
+        background-color: #fff;
+        height: 290px;
+        padding: 10px 30px;
+      }
+
+      .line {
+        height: 1px;
+        background-color: #ddd;
+        margin: 10px 0;
+      }
+
+      .content-box .txt {
+        font-size: 14px;
+      }
+
+      .qrcode-warpper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      
+      .qrcode img {
+        width: 150px;
+        height: 150px;
+        border: 1px solid #ddd;
+      }
+
+      .time-tip {
+        color: #f5bd3c;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+
+      .bottom-tip {
+        font-size: 10px;
+        color: #aaa;
+        margin-top: 12px;
+      }
+    </style>
+</head>
+
+<body>
+  <div class="content-warpper">
+    <div class="header">
+      <span class="active">外出申请</span>
+      <span>外出记录</span>
+    </div>
+    <div class="tab-line"></div>
+    <div class="info-box">
+      <img src="https://login.weixin.qq.com/qrcode/AZAoO1H43g==" alt="">
+      <div>
+        <div>朱艺璇 1201911123<br />高等教育研究所/2019心理学</div>
+      </div>
+    </div>
+    <div class="content-box">
+      <div class="txt">临时出校二维码</div>
+      <div class="line"></div>
+      <div class="qrcode-warpper">
+        <div class="time-tip">距离返校时间还剩：1天 02:12:45</div>
+        <div class="qrcode"><img src="https://login.weixin.qq.com/qrcode/AZAoO1H43g==" alt=""></div>
+        <div class="bottom-tip">请向校方检查人员出示二维码，扫描进出校~</div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
