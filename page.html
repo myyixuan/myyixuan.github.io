@@ -24,61 +24,63 @@
         margin: 0;
       }
       body {
-        background-color: #f5efef;
+        background-color: #f9f9f9;
         font-size: 12px;
       }
 
       .header {
-        color: #333;
+        color: #2F343B;
         display: flex;
         justify-content: space-around;
         padding: 10px 0;
+        font-size: 14px;
       }
 
       .header .active {
-        color: #159ca7
+        color: #52C7CA;
       }
 
       .tab-line {
         height: 1px;
         width: 50%;
-        background-color: #159ca7;
+        background-color: #52C7CA;
       }
 
       .info-box {
-        height: 100px;
-        background-color: #159ca7;
+        height: 126px;
+        background-color: rgb(82, 199, 202);
         display: flex;
         align-items: center;
         color: #fff;
+        font-size: 16px;
       }
 
       .info-box div {
-        line-height: 26px;
+        line-height: 30px;
       }
 
       .info-box img {
-        width: 50px;
-        height: 50px;
-        border: 2px solid #fff;
-        border-radius: 25px;
-        margin: 0 20px 0 14px;
+        width: 80px;
+        height: 80px;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        margin: 0 26px 0 20px;
       }
 
       .content-box {
         background-color: #fff;
-        height: 290px;
+        height: 320px;
         padding: 10px 30px;
       }
 
       .line {
         height: 1px;
-        background-color: #ddd;
+        background-color: #eee;
         margin: 10px 0;
       }
 
       .content-box .txt {
-        font-size: 14px;
+        font-size: 18px;
       }
 
       .qrcode-warpper {
@@ -92,18 +94,31 @@
         width: 150px;
         height: 150px;
         border: 1px solid #ddd;
+        padding: 10px;
       }
 
       .time-tip {
-        color: #f5bd3c;
+        color: rgb(255, 153, 24);
+        font-size: 14px;
+      }
+
+      .bottom-tip {
+        font-size: 12px;
+        color: rgb(146, 150, 156);
+        margin-top: 12px;
+      }
+
+      .time-tip-warpper {
+        display: flex;
+        align-items: center;
         margin-top: 10px;
         margin-bottom: 20px;
       }
 
-      .bottom-tip {
-        font-size: 10px;
-        color: #aaa;
-        margin-top: 12px;
+      .time-tip-warpper img {
+        width: 26px;
+        height: 26px;
+        margin-right: 8px;
       }
     </style>
 </head>
@@ -116,22 +131,36 @@
     </div>
     <div class="tab-line"></div>
     <div class="info-box">
-      <img src="images/qrcode.png" alt="">
+      <img src="images/none.png" alt="">
       <div>
-        <div>朱艺璇 1201911123<br />高等教育研究所/2019心理学</div>
+        <div>朱艺璇  1201911123<br />高等教育研究所/2019心理学</div>
       </div>
     </div>
     <div class="content-box">
       <div class="txt">临时出校二维码</div>
       <div class="line"></div>
       <div class="qrcode-warpper">
-        <div class="time-tip">距离返校时间还剩：1天 02:12:45</div>
-        <div class="qrcode"><img src="images/qrcode.png" alt=""></div>
+        <div class="time-tip-warpper">
+          <img src="images/ld2.png" alt="">
+          <span class="time-tip">距离返校时间还剩：1天 02:12:<span id="sec">55</span></span>
+        </div>
+        <div class="qrcode"><img src="data:image/png;base64,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" alt=""></div>
         <div class="bottom-tip">请向校方检查人员出示二维码，扫描进出校~</div>
       </div>
     </div>
   </div>
-
+  <script>
+    
+    setInterval(function() {
+      var secDom = document.getElementById('sec')
+      var sec = +(secDom.innerHTML)
+      if (sec == 0) {
+        secDom.innerHTML = '59'
+      } else {
+        secDom.innerHTML = sec - 1
+      }
+    }, 1000)
+  </script>
 
 </body>
 
